@@ -1,21 +1,21 @@
 const autocannon = require('autocannon');
 
-const url = 'http://localhost:3000';
+const urls = ['http://localhost:3000', 'http://localhost:3000/stress-test'];
 const duration = 30; // Test duration in seconds
 
-const instance = autocannon({
-    url,
-    duration,
-}, (err, result) => {
-    if (err) {
-        console.error('Error occurred:', err);
-        return;
-    }
-    console.log('Test results:', result);
-});
-
-autocannon.track(instance);
-
-instance.on('done', () => {
-    console.log('Test completed');
+urls.forEach(url => {
+    autocannon({
+        url,
+        duration,
+    }, (err, result) => {
+        if (err) {
+            console.error('Error occurred:', err);
+            return;
+        }
+        else {
+            console.log(`URL: ${url}`);
+            console.log("Number of requests:", result.requests.total);
+            console.log("Duration (seconds):", result.duration);
+        }
+    });
 });

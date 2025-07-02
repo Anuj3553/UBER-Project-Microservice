@@ -5,9 +5,19 @@ const app = express();
 app.use(morgan('dev')); // Use morgan for logging HTTP requests
 
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+    for (let i = 0; i < 10000000000; i++) {
+
+    }
+
+    res.send('Hello, World!');
+});
+
+app.get('/stress-test', (req, res) => {
+    for (let i = 0; i < 10000000000; i++) {
+    }
+    res.send('Stress Test Endpoint');
 });
 
 app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
+    console.log('Server is running on http://localhost:3000');
 });
