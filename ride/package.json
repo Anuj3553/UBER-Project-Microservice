@@ -1,5 +1,5 @@
 {
-  "name": "user",
+  "name": "ride",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -12,12 +12,13 @@
   "type": "commonjs",
   "dependencies": {
     "amqplib": "^0.10.8",
-    "bcrypt": "^6.0.0",
+    "axios": "^1.10.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.0.1",
-    "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.16.1",
-    "morgan": "^1.10.0"
+    "mongoose": "^8.16.1"
+  },
+  "devDependencies": {
+    "express": "^5.1.0"
   }
 }
