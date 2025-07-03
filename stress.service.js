@@ -24,8 +24,8 @@ if (cluster.isMaster) {
 
     app.use(morgan('dev')); // Use morgan for logging HTTP requests
 
-    app.get('/stress-test', (req, res) => {
-        for (let i = 0; i < 100000000000; i++) {
+    app.get('/', (req, res) => {
+        for (let i = 0; i < 1000000000; i++) {
             // Simulating a heavy computation
         }
 
