@@ -134,7 +134,6 @@ module.exports.toggleAvailability = async (req, res) => {
         res.status(200).json({
             message: `captain is now ${captain.isAvailable ? 'available' : 'not available'}`,
             captain,
-            isAvailable: captain.isAvailable
         });
     } catch (error) {
         console.error(error);
