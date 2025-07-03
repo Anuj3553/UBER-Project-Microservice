@@ -5,7 +5,7 @@ const app = express();
 app.use(morgan('dev')); // Use morgan for logging HTTP requests
 
 app.get('/', (req, res) => {
-    for (let i = 0; i < 10000000000; i++) {
+    for (let i = 0; i < 1000000000; i++) {
 
     }
 
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/stress-test', (req, res) => {
-    for (let i = 0; i < 10000000000; i++) {
+    for (let i = 0; i < 1000000000; i++) {
     }
     res.send('Stress Test Endpoint');
 });
